@@ -1,0 +1,24 @@
+@font-face {
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../fonts/Lato-Regular.ttf") format("opentype");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 300;
+	src: url("../fonts/Lato-Light.ttf") format("opentype");
+	font-display: swap;
+}
+
+
+@font-face {
+	font-family: "Lato";
+	font-style: normal;
+	font-weight: 700;
+	src: url("../fonts/Lato-Bold.ttf") format("opentype");
+	font-display: swap;
+}

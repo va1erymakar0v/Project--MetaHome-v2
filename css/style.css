@@ -1,0 +1,2305 @@
+:root {
+  --primary: #E7ECEF;
+  --secondary: #274C77;
+  --half-secondary: #516F91;
+  --secondary-low: #879CB3;
+  --boxes: #F8F8FB;
+  --cold: #00B2FF;
+  --hot: #FF7A00;
+  --bad: #9B4343;
+  --good: #439B57;
+
+  --big-shadow: -7px 7px 12px 1px rgba(34, 60, 80, 0.2);
+  --small-shadow: 0 4px 4px rgba(0,0,0,0.25);
+
+  --content-minimal: 690px;
+  --height-maximal: 840px;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1;
+
+	background-color: #e5e5e5;
+}
+
+
+*, *:before, *:after, button, input {
+	font: inherit;
+	font-size: 100%;
+	text-decoration: none;
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+button {
+  border: none;
+
+  color: inherit;
+
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+select:focus {
+	outline: 1px solid var(--secondary);
+}
+
+.wrapper {
+	overflow: hidden;
+}
+
+.container-1440 {
+	max-width: 1440px;
+	min-height: 1024px;
+
+	margin: 50px auto;
+
+	background-color: var(--primary);
+
+	box-shadow: var(--big-shadow);
+}
+
+/****************************PATTERNS*******************************/
+
+.heading-style {
+	font-weight: 700;
+	font-size: 18px;
+	color: var(--secondary);
+}
+
+.status-style {
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--secondary-low);
+}
+/*=======================================================document-HEADER*/
+
+.header {
+	position: relative;
+
+	width: 100%;
+	height: 64px;
+
+	color: var(--half-secondary);
+
+	background-color: var(--boxes);
+
+	box-shadow: var(--small-shadow);
+}
+
+.header__container {
+	display: grid;
+	grid-template-columns: 15.26% 6.55% 20.05% 24.28% 30.05% 3.81%;
+
+	width: 1312px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.header__container > * {
+	align-self: center;
+	justify-self: center;
+}
+
+.header__logo-mini {
+	display: none;
+}
+
+.header__logo-mini a {
+	font-weight: 400;
+
+	border: 1px solid var(--secondary);
+
+	padding: 5px;
+
+	cursor: pointer;
+}
+.header__date {
+	justify-self: flex-end;
+}
+.header__year {
+	justify-self: flex-start;
+}
+
+.header__users {
+	justify-self: center;
+}
+
+.header__container > *:first-child {
+	justify-self: flex-start;
+}
+.header__container > *:last-child {
+	justify-self: flex-end;
+}
+
+.header__exit{
+	padding-top: 3px;
+}
+
+.header__exit > * {
+	width: 25px;
+	height: 25px;
+}
+
+.header__exit .header-exit-darktheme {
+	display: none;
+}
+
+/*---user menu---*/
+.header__users {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.users__arrow svg{
+	width: 15px;
+	height: 9px;
+
+	stroke: var(--secondary);
+}
+
+.users__greeting {
+	margin-left: 15px;
+}
+
+.users__menu__active-user {
+	position: relative;
+}
+
+.users__menu__hidden-users {
+	position: absolute;
+	top: 100%;
+	z-index: 10;
+
+	background-color: var(--boxes);
+
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+
+  visibility: hidden;
+  opacity: 0;
+  box-shadow: var(--small-shadow);
+}
+
+.users__menu__hidden-users.active {
+	opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s linear, visibility 0.4s linear;
+}
+
+.users__menu__item {
+	display: flex;
+	align-items: center;
+
+	width: 140px;
+
+	padding: 5px 10px;
+}
+.users__menu__active-user .users__menu__item {
+	justify-content: flex-start;
+	font-weight: 700;
+
+	color: var(--secondary);
+
+	cursor: pointer;
+}
+.users__menu__hidden-users .users__menu__item {
+	justify-content: space-between;
+	cursor: pointer;
+}
+.users__menu__hidden-users .users__menu__item:hover {
+	background-color: #a5b3c7;
+	transition: all 0.3s linear;
+}
+
+.users__menu__item__photo {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+
+	margin-left: 12px;
+}
+
+.header__add-user {
+	height: 35px;
+	width: 35px;
+
+	font-size: 32px;
+	color: var(--secondary);
+	text-align: center;
+
+	border-radius: 50%;
+	border: 1px solid var(--secondary);
+}
+
+/*=======================================================document-MAIN*/
+
+.main {
+	display: flex;	
+	justify-content: space-between;
+
+	margin-top: 50px;
+}
+
+.menu {
+	min-width: 314px;
+}
+
+.pages {
+	padding: 0 64px 0 20px;
+}
+
+/*------------------------MAIN_MENU-----------------------------*/
+.menu__list ul{
+	display: flex;
+	flex-direction: column;
+}
+
+.menu__link {	
+	display: flex;
+	align-items: center;
+
+	border-bottom-right-radius: 20px;
+	border-top-right-radius: 20px;
+
+	font-size: 20px;
+	font-weight: 400;	
+	color: var(--secondary);
+
+	padding: 16px 0 16px 64px;
+
+	cursor: pointer;
+}
+
+.menu__icon, .menu__icon_active	{	
+	width: 30px;
+	height: 30px;
+
+	margin-right: 21px;
+}
+
+.menu__link.active {
+	color: var(--primary);
+
+	background-color: var(--secondary);
+
+	box-shadow: var(--small-shadow);
+}
+
+.menu__link .menu__icon_active {
+	display: none;
+}
+.menu__link.active .menu__icon {
+	display: none;
+}
+.menu__link.active .menu__icon_active {
+	display: block;
+}
+
+.menu__link:not(:first-child) {
+	margin-top: 15px;
+}
+
+.menu__link:last-child {
+	margin-top: 177px;
+}
+
+/*=======================================================PAGES*/
+
+.page {
+	display: none;
+
+	width: 1000px;
+
+	margin: 0 auto;
+}
+
+.page.active {
+	display: block;
+}
+
+.card {
+	position: relative;
+
+	border-radius: 20px;
+	
+	color: var(--half-secondary);
+
+	background-color: var(--boxes);
+
+	box-shadow: var(--small-shadow);
+}
+
+.card__title {
+	margin-bottom: 12px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 21px;
+
+  margin-right: 5px;
+}
+.switch input {
+	display:none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--secondary-low);
+  transition: .4s;
+  border-radius: 15px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--half-secondary);
+}
+input:checked + .slider:before {
+  transform: translateX(19px);
+}
+
+input:disabled + .slider {
+ background-color: var(--bad);
+}
+
+input:disabled + .slider:before {
+	display: none;
+}
+
+
+/*---------------------------------------------------PAGE-----DASHBOARD*/
+
+.dashboard {
+	position: relative;
+}
+
+.dashboard__content {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.dashboard__control-cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	width: var(--content-minimal);
+	height: var(--height-maximal);
+}
+
+.dashboard__control-cards > *:nth-child(n+3) {
+	margin-top: 45px;
+}
+
+.dashboard__system-cards {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	width: 250px;
+}
+
+.dashboard__card {
+	width: 314px;
+	height: 184px;
+	padding: 30px 20px;
+}
+
+.dash-weather-card, 
+.dash-temperature-card, 
+.dash-wifi-card, 
+.dash-electricity-card {
+	cursor: pointer;
+}
+
+.dash-notifications-card {
+	width: 100%;
+	height: 374px;
+}
+
+.dash-quick-panel-card {
+	width: 100%;
+	height: 410px;
+
+	padding-right: 40px;
+}
+
+.dash-movies-card {
+	width: 100%;
+	height: 360px;
+
+	padding: 0;
+
+	overflow: hidden;
+}
+
+/*----------------dashboard---weather-card*/
+
+.dash-weather-card {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dash-weather-card .degrees__sign {
+	margin-left: 5px;
+}
+
+.dash-weather__description {
+	display: flex;
+	flex-direction: column;
+}
+
+.dash-description__day, 
+.dash-description__temperature-today, 
+.dash-description__tempertature-now {
+	margin-top: 7px;
+}
+
+.dash-description__city {
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.dash-description__tempertature-now,
+.dash-description__tempertature-now .degrees__sign {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.dash-description__temperature-today {
+	font-size: 14px;
+}
+
+.dash-description__night {
+	font-size: 14px;
+	color: var(--cold);
+}
+.dash-description__night + .degrees__sign {
+	font-size: 14px;
+	color: var(--cold);
+	padding-right: 5px;
+}
+
+
+
+.dash-description__day {
+	font-size: 14px;	
+	color: var(--hot);
+	
+	padding-left: 5px;
+}
+.dash-description__day + .degrees__sign {
+	font-size: 14px;
+	color: var(--hot);
+}
+
+.dash-description__name {
+	margin-top: 12px;
+}
+
+.dash-weather__img {
+	padding-right: 20px;
+}
+
+.dash-weather__img img {
+	width: 130px;
+	height: 100px;
+}
+
+/*----------------dashboard---wifi-card*/
+.dash-wifi__status {
+	font-weight: 700;
+
+	margin-bottom: 17px;
+}
+
+.dash-wifi__devices {
+	display: flex;
+
+	margin-top: 15px;
+}
+
+.dash-wifi__comment {
+	color: var(--secondary-low);
+
+	margin-left: 5px;
+}
+
+.dash-wifi__send-recieved {
+	display: flex;
+	justify-content: space-between;
+
+	margin-top: 22px;
+}
+
+.dash-wifi__send, 
+.dash-wifi__recieved {
+	display: flex;
+	align-items: flex-end;
+}
+
+.dash-wifi__gb-send, 
+.dash-wifi__gb-recieved {
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.dash-wifi__gb {
+	font-weight: 300;
+	color: var(--secondary-low);
+}
+
+.dash-wifi__gb, .dash-wifi__way {
+	margin-left: 3px;
+}
+
+.dash-wifi__send .dash-wifi__way {
+	color: var(--bad);
+	font-weight: 300;
+}
+
+.dash-wifi__recieved .dash-wifi__way {
+	color: var(--good);
+	font-weight: 300;
+}
+
+
+/*----------------dashboard---temperature-card*/
+
+.dash-temperature__control, 
+.dash-temperature__now, 
+.dash-temperature__auto {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dash-temperature__img.temperature-hot {
+	display: none;
+}
+
+.dash-temperature__control {
+	margin-top: -5px;
+}
+
+.dash-temperature__img {
+	width: 75px;
+	height: 75px;
+}
+
+.dash-temperature__degrees, 
+.degrees__sign {
+	font-size: 40px;
+	font-weight: 400;
+
+	margin-left: 20px;
+}
+
+.dash-temperature__buttons {
+	position: relative;
+
+	height: 70px;
+
+	padding-right: 50px;
+}
+.dash-temperature__up {
+	position: absolute;
+	top: 0;
+}
+.dash-temperature__down {
+	position: absolute;
+	bottom: 0;
+}
+
+.dash-temperature__auto {
+	margin-top: 7px;
+}
+
+.dash-temperature__auto__comment {
+	font-size: 14px;	
+	color: var(--secondary-low);
+}
+
+
+/*----------------dashboard---electricity-card*/
+
+.dash-electricity__daily-weekly {
+	font-size: 14px;
+	color: var(--half-secondary);
+
+	margin-top: 15px;
+}
+.dash-electricity__daily-weekly > *:last-child {
+	margin-left: 15px;
+}
+
+.dash-electricity__daily-weekly button {
+	width: 110px;
+	height: 30px;
+
+	background-color: var(--primary);
+
+	border-radius: 9px;
+}
+
+.dash-electricity__daily-weekly .active {
+	border: 2px solid var(--half-secondary);
+}
+
+.dash-electricity__graphs {
+	margin-top: 15px;
+}
+
+.dash-electricity__graphs__weekly {
+	display: none;
+}
+
+.dash-electricity__graphs__weekly .last-energy-spent__day:not(:first-child) {
+	margin-left: 10px;
+}
+
+.dash-electricity__graphs .dash-electricity__graphs__daily {
+	font-size: 22px;
+
+	margin-right: 10px;
+}
+/*----------------------dashboard--movies-card*/
+.movies-slider {
+	width: 100%;
+	height: 100%;
+}
+
+.movies-slider-line {
+	width: 100%;
+	height: 100%;
+
+	margin: 0 auto;
+}
+
+.movies-slider-slide {
+	position: relative;
+
+	display: none;
+
+	width: 100%;
+	height: 100%;
+}
+
+.movies-slider-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+
+	width: 100%;
+	height: 360px;
+
+	border-radius: 20px;
+
+	filter: blur(3px);
+}
+
+.movies-slider-blur {
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	z-index: 1;
+
+	opacity: 0.5;
+}
+
+.movies-slider-slide.active {
+	display: block;
+
+	width: 100%;
+	height: 100%;
+}
+
+.movies-slider-buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding-bottom: 15px;
+}
+
+.slider1-prev {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 0;
+	z-index: 5;
+
+	padding-left: 24px;
+}
+
+.slider1-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 0;
+	z-index: 5;
+
+	padding-right: 24px;
+}
+
+.slider1-prev img,
+.slider1-next img {
+	width: 16px;
+	height: 26px;
+}
+
+#movies-slider-next, #movies-slider-prev {
+	cursor: pointer;
+}
+
+.movies-slider-dots {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+
+	display: flex;
+	justify-content: space-between;
+
+	width: 60px;
+
+	margin: 0 auto;
+}
+
+.movies-slider-dot {
+	width: 7px;
+	height: 7px;
+
+	border-radius: 50%;
+
+	margin-bottom: 42px;
+
+	background-color: var(--boxes);
+
+	cursor: pointer;	
+}
+
+.movies-slider-dot.active {
+	background-color: var(--half-secondary);
+}
+
+.movie {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 3;
+
+	padding-left: 64px;
+	padding-right: 64px;
+	padding-top: 79px;
+	padding-bottom: 57px;
+
+	font-size: 24px;
+	font-weight: 400;
+	color: var(--primary);
+}
+
+.content__title {
+	position: absolute;
+	left: 64px;
+	top: 35px;
+	z-index: 5;
+
+	font-size: 24px;
+	font-weight: 700;
+
+	color: var(--primary);
+}
+
+.movie__info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
+	height: 40px;
+
+	margin-bottom: 15px;
+}
+
+.movie__name {
+	font-size: 20px;
+
+	max-width: 60%;
+}
+
+.movie__rating {
+	display: flex;
+	align-items: center;
+}
+
+.rating__reviews {
+	font-size: 13px;
+	color: #d1d9e1;
+
+	margin-left: 5px;
+}
+
+.movie__plot {
+	font-size: 15px;
+	font-weight: 300;
+	line-height: 170%;
+}
+
+.movie__choose {
+	position: absolute;
+	top: 285px;
+	left: 64px;
+	z-index: 5;
+
+	border-radius: 10px;
+
+  font-size: 14px;
+	color: var(--secondary);
+
+	padding: 9px 39px;
+
+	background-color: var(--primary);
+}
+
+.movie__choose:hover {
+	color: var(--primary);
+
+	background-color: var(--half-secondary);
+
+	transition: all 0.1s linear;
+}
+
+/*----------------------dashboard--notifications-card*/
+
+.dash-notifications__item {
+	margin-top: 20px;
+}
+
+.dash-notifications__item {
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+}
+
+.dash-notifications__item-example {
+	display: none;
+}
+
+.dash-notification__content {
+	margin-left: 15px;
+}
+
+
+.notification__alert {
+	width: 10px;
+	height: 10px;
+
+	border-radius: 50%;
+
+	background-color: var(--good);
+}
+
+.notification__alert.red {
+	background-color: var(--bad);
+}
+
+.dash-notification__text {
+	font-size: 16px;
+	color: var(--half-secondary);
+}
+
+.dash-notification__time {
+	font-size: 14px;
+	color: var(--secondary-low);
+
+	margin-top: 5px;
+}
+
+
+/*----------------------dashboard--quick-panel-card*/
+
+.dash-qick-panel__item {
+	margin-top: 35px;
+}
+
+.dash-qick-panel__item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.dash-quick-panel__img {
+	width: 30px;
+	height: 30px;
+}
+
+.dash-quick-panel__info {
+	display: flex;
+	align-items: center;
+}
+
+.dash-quick-panel__name {
+	font-size: 16px;
+	color: var(--half-secondary);
+
+	margin-left: 10px;
+}
+
+
+/*---------------------------------------DEVICE-PAGE*/
+.devices__line {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.device__card {
+	display: inline-block;
+
+	padding: 25px 35px;
+	margin-top: 25px;
+}
+
+.device__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	color: var(--half-secondary);
+}
+
+.device__content > *:not(:first-child) {
+	margin-top: 7px;
+}
+
+/*phone*/
+
+.device__income-calls__number {
+	color: var(--bad);
+}
+
+.device__income-messages__number {
+	color: var(--good);
+}
+
+.income-calls__seen, 
+.income-messages__seen {
+	font-style: italic;
+
+	padding-left: 10px;
+}
+
+/*pc*/
+
+.device__downloads .download-done {
+	color: var(--good);
+}
+.device__downloads .download-failed {
+	color: var(--bad);
+}
+
+.device__wifi-connection span {
+	color: var(--good);
+}
+
+.device__antivirus .antivirus-clean {
+	color: var(--good);
+}
+
+.device__antivirus .antivirus-warnings {
+	color: #ea9e00;
+}
+
+/*musical player*/
+.device__music-player__content {
+	display: flex;
+	flex-direction: column;
+}
+
+.device__music-player__content > * {
+	display: flex;
+	flex-direction: column;
+
+	margin-top: 10px;
+}
+
+.device__music-player__content > * > *:last-child {
+	margin-top: 10px;
+}
+
+.device__card-music {
+	min-width: 290px;
+}
+
+.device__card-music .device__status {
+	color: var(--good);
+}
+
+.device__hidden-song {
+	display: none;
+}
+
+.device__current-song .song__name {
+	font-size: 20px;
+	color: var(--secondary);
+}
+
+.device__incoming-song .song__name {
+	font-size: 16px;
+}
+
+.device__current-song .song__cover {
+	width: 85px;
+	height: 85px;
+}
+
+.device__incoming-song .song__cover {
+	width: 65px;
+	height: 65px;
+}
+
+
+.device__music__play-stop-buttons, 
+.device__TV__play-stop-buttons {
+	display: grid;
+	justify-content: center;
+
+	grid-template-columns: 30px 30px 30px;
+	grid-template-rows: 30px;
+}
+
+.devices__music-pause, 
+.devices__music-play,
+.devices__TV-pause, 
+.devices__TV-play {
+	grid-column: 2 / 3;
+}
+
+.devices__music-prev {
+	grid-column: 1 / 2;
+
+	text-align: center;
+}
+.devices__music-next {
+	grid-column: 3 / -1;
+
+	text-align: center;
+}
+
+
+.devices__music-pause, 
+.devices__music-play, 
+.devices__TV-pause, 
+.devices__TV-play {
+	height: 30px;
+	width: 30px;
+
+	fill: var(--secondary-low);
+}
+
+.devices__music-pause:hover, 
+.devices__music-play:hover, 
+.devices__TV-play:hover, 
+.devices__TV-pause:hover {
+	fill: var(--secondary);
+}
+
+.music__volume__slider {
+	width: 100%;
+}
+
+.devices__music-play {
+	display: none;
+}
+
+.devices__music-prev,
+.devices__music-next {
+	font-weight: 700;	
+	color: var(--secondary-low);
+}
+
+/* movies */
+
+.devices__TV-play {
+	display: none;
+}
+.device__card-TV .device__status {
+	color: var(--good);
+}
+
+.device__TV__onair span {
+	font-size: 16px;
+}
+.device__TV__plans span{
+	font-size: 16px;
+}
+
+.device__TV__tonights-choice {
+	display: none;
+}
+
+.device__TV__tonights-choice__film {
+	display: none;
+}
+
+.device__TV__tonights-choice__heading {
+	margin-bottom: 15px;
+}
+
+.film-chosen-img {
+	width: 220px;
+	height: 130px;
+}
+
+.chosen-movie__about {
+	margin-left: 30px;
+}
+
+.chosen-rating__stars {
+	display: inline-block;
+
+	border-radius: 10px;
+
+	background-color: var(--secondary-low);
+}
+
+.rating__stars > * {
+	height: 18px;
+	width: 18px;
+}
+
+.device__TV__tonights-choice__film {
+	display: flex;
+	align-items: center;
+
+	max-width: 600px;
+
+	margin-top: 7px;
+}
+.device__TV__tonights-choice__heading {
+	font-size: 22px;
+	color: var(--secondary-low);
+}
+.chosen-movie__name {
+	font-size: 28px;
+
+	margin-left: 20px;
+	text-align: center;
+}
+.delete-movie-choice {
+	font-size: 14px;
+	color: var(--hot);
+
+	border: 1px solid var(--hot);
+	border-radius: 50%;
+
+	padding: 5px;
+	margin-left: 30px;
+}
+
+
+.device__TV__tonights-choice__none {
+	font-style: italic;
+	color: var(--secondary-low);
+
+	padding-top: 25px;
+	padding-bottom: 50px;
+}
+
+
+/*---------------------------------------PAGE-LIGHTS*/
+
+.lights__room-scheme {
+	position: relative;
+
+	width: 1000px;
+	height: 700px;
+}
+
+.room__heading {
+	font-size: 22px;
+	color: var(--half-secondary);
+	text-align: center;
+
+	padding-top: 15px;
+}
+.room__warning {
+	display: none;
+
+	font-size: 22px;
+	color: var(--bad);
+	text-align: center;
+
+	padding-top: 15px;
+}
+
+.light-regimes__heading {
+	width: 100%;
+
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+
+	padding: 20px 0;
+}
+
+.living-room__lights,
+.hall__lights,
+.kitchen__lights,
+.bathroom__lights {
+	position: relative;
+
+	width: 100%;
+	height: 100%;
+}
+
+.card.living-room {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	width: 690px;
+	height: 350px;
+
+	background-color: var(--boxes);
+}
+
+.card.hall {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+
+	width: 300px;
+	height: 320px;
+
+	background-color: var(--boxes);
+}
+
+.card.kitchen{
+	position: absolute;
+	bottom: 0;
+	left: 300px;
+
+	width: 350px;
+	height: 320px;
+	
+	background-color: var(--boxes);
+}
+
+.card.bathroom{
+	position: absolute;
+	top: 25px;
+	left: 0px	;
+
+	width: 270px;
+	height: 160px;
+
+	background-color: var(--boxes);
+}
+
+.card.light-regimes {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	width: 250px;
+	height: 450px;
+
+	color: var(--primary);
+
+	background-color: var(--secondary-low);
+}
+
+
+.lightsoff, .lightson {
+	width: 35px;
+	height: 35px;
+
+	padding: 5px;
+
+	border-radius: 50%;
+
+	cursor: pointer;
+}
+
+.lightson {
+	box-shadow: 0px 0px 35px #efce4a;
+}
+
+.lights__bulb > * {
+	display: none;
+}
+.lights__bulb .active {
+	display: block;
+}
+
+#lightbulb-lr1, #lightbulb-k1 {
+	position: absolute;
+	top: 10px;
+	left: 10px;	
+}
+
+#lightbulb-h1, #lightbulb-b1, #lightbulb-lr4, #lightbulb-k4 {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+
+#lightbulb-lr2, #lightbulb-k2 {
+	position: absolute;
+	top: 10px;
+	right: 10px;	
+}
+
+#lightbulb-h2, #lightbulb-b2, #lightbulb-lr3, #lightbulb-k3 {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+#lightbulb-b3, #lightbulb-h3 {
+	position: absolute;
+	bottom: 40%;
+	right: 50%;
+	transform: translateX(50%)
+}
+
+#lightbulb-lr5 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0)
+}
+
+.light-regimes__item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 20px 40px;
+}
+
+.slider.lights {
+	background-color: var(--primary);
+}
+.slider.lights:before {
+	background-color: var(--secondary);
+}
+input:checked + .slider.lights {
+  background-color: var(--half-secondary);
+}
+
+/*----------------------------------------------PAGE--TEMPERATURE*/
+
+.temperature .card {
+	padding: 30px 40px;	
+}
+
+.temperature .degrees__sign {
+	margin-left: 7px;
+}
+
+.living-room__temp,
+.bath__temp,
+.auto__temp {
+	display: flex;
+	flex-direction: column;
+
+	text-align: center;
+}
+
+.card.living-room__temp {
+	width: 440px;
+	height: 100%;
+}
+.card.bath__temp {
+	width: 100%;
+	height: 100%;
+}
+.card.auto__temp {
+	width: 100%;
+	height: 100%;
+
+	margin-top: 30px;
+}
+
+.temperature__content {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.temperature__side-settings {
+	display: flex;
+	flex-direction: column;
+
+	margin-left: 50px;
+}
+
+.bath__temp__info {
+	display: flex;
+}
+
+.living-room__temp .temperature__degrees {
+	width: 80%;
+	border: 2px solid var(--half-secondary);
+	border-radius: 10px;
+
+	font-size: 40px;
+	color: var(--half-secondary);
+
+	margin: 30px auto 0;
+	padding: 20px;
+}
+
+.living-room__temp .temperature__degrees .degrees__sign {
+	font-size: inherit;
+}
+
+.living-room__temp .temperature__ready {
+	margin-top: 60px;
+}
+
+.temperature__ready__heading {
+	visibility: hidden;
+}
+
+.set-temperature__living-room,
+.set-temperature__bath,
+.set-temperature__auto {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.temperature__ready {
+	display: flex;
+	flex-direction: column;
+}
+
+/*heat sources*/
+.temperature__heat-sources {
+	margin-top: 30px;
+}
+
+.heat-sources__name {
+	color: var(--secondary-low);
+}
+
+.temperature .heat-sources__temperature__value, 
+.temperature .degrees__sign {
+	font-size: 28px;
+	color: var(--half-secondary);
+}
+
+.heat-sources__weather,
+.heat-sources__source2 {
+	margin-top: 30px;
+}
+
+.heat-sources__source1 {
+	margin-top: 20px;
+}
+
+.heat-sources__source1__controls,
+.heat-sources__source2__controls {
+	margin-top: 10px;
+}
+
+/*weather-block*/
+.heat-sources__weather {
+	display: flex;
+	flex-direction: column;
+}
+
+.heat-sources__weather > *:not(:first-child) {
+	margin-top: 15px;
+}
+
+.heat-sources__weather__temperature-today,
+.heat-sources__weather__temperature-today .degrees__sign{
+	font-size: 18px;
+}
+
+.heat-sources__weather__night {
+	color: var(--cold);
+}
+.heat-sources__weather__night + .degrees__sign {
+	color: var(--cold);
+
+	padding-right: 15px;
+}
+
+.heat-sources__weather__day {
+	color: var(--hot);
+	padding-left: 15px;
+}
+.heat-sources__weather__day + .degrees__sign{
+	color: var(--hot);
+}
+
+
+.heat-sources__weather__day + .degrees__sign {
+
+}
+
+.heat-sources__weather__img {
+	width: 100px;
+	height: 75px;
+
+	margin: 0 auto;
+}
+
+/*bath-temp*/
+
+.bath__temp .heat-sources__temperature__value,
+.bath__temp .degrees__sign {
+	font-size: 40px;
+}
+
+.bath__temp__info {
+	justify-content: center;
+	align-items: center;
+
+	margin-top: 45px;
+}
+
+.heat-sources__bath__controls {
+	margin-left: 20px;
+}
+
+.heat-sources__bath__img {
+	width: 70px;
+	height: 70px;
+
+	margin-left: 30px;
+}
+
+/*auto-temp*/
+.auto__temp__season {
+	margin-top: 25px;
+}
+.auto__temp__season span {
+	color: var(--cold);
+}
+
+.auto__temp__todaytemp {
+	margin-top: 15px;
+}
+.auto__temp .degrees__sign,
+.auto__temp__todaytemp__value {
+	font-size: 22px;
+	color: var(--half-secondary);
+}
+.auto__temp__todaytemp__value {
+	margin-left: 5px;
+}
+
+.auto__temp__stayinghome,
+.auto__temp__window {
+	display: flex;
+	justify-content: center;
+}
+
+.auto__temp__stayinghome__heading,
+.auto__temp__window__heading {
+	margin-right: 30px;
+}
+
+.auto__temp__stayinghome {
+	margin-top: 15px;
+}
+
+.auto__temp__window {
+	margin-top: 10px;
+}
+
+
+.auto__temp__advice {
+	font-size: 16px;
+	color: var(--secondary-low);
+
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.auto__temp__advice__value,
+.auto__temp__advice__value + .degrees__sign {
+	font-size: 28px;
+}
+
+.temperature__ready {
+	font-size: 16px;
+	color: var(--secondary-low);
+
+	margin-top: 25px;
+}
+
+.set-temperature__living-room,
+.set-temperature__auto, 
+.set-temperature__bath {
+	border: 1px solid var(--secondary);
+	border-radius: 5px;
+
+	color: var(--secondary);
+
+	margin-top: 15px;
+	padding: 10px 20px;
+
+	transition: all 0.1s linear;
+}
+
+.set-temperature__living-room:hover,
+.set-temperature__auto:hover,
+.set-temperature__bath:hover {
+	background-color: var(--primary);
+}
+
+.set-temperature__living-room:disabled,
+.set-temperature__auto:disabled, 
+.set-temperature__bath:disabled {
+	border: 1px dashed var(--secondary-low);
+}
+
+
+
+/*----------------------------------------------PAGE--ELECTRICITY*/
+.card.electric-board {
+	display: flex;
+	justify-content: space-around;
+
+	padding: 20px 40px;
+}
+
+.electric-board__switch {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: 100px;
+}
+
+.switch.electric-board {
+  position: relative;
+
+  display: inline-block;
+
+  width: 20px;
+  height: 120px;
+}
+.switch.electric-board  input {
+	display:none;
+}
+
+.slider.electric-board  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  border-radius: 0;
+
+  background-color: #bcbcbc;
+  transition: .2s;
+  
+  cursor: pointer;
+}
+.slider.electric-board:before {
+  position: absolute;
+  left: -8px;
+  bottom: 3px;
+
+  content: "";
+
+  height: 15px;
+  width: 35px;
+  border-radius: 0;
+
+  background-color: #000;
+  transition: .2s;
+}
+
+.electric-board__switch-checkbox:checked + .slider.electric-board  {
+  background-color: #ffbe2c;
+}
+.electric-board__switch-checkbox:checked + .slider.electric-board:before {
+  transform: translateY(-98px);
+}
+
+.electric-board__on {
+	position: absolute;
+	top: -5%;
+	left: 160%;
+
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.electric-board__off {
+	position: absolute;
+	bottom: -7%;
+	left: 150%;
+
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.electric-board__switch__name {
+	text-align: center;
+	color: var(--half-secondary);
+
+	padding-right: 5px;
+	margin-top: 25px;
+}
+
+.energy-statistics {
+	display: grid;
+	grid-template-columns: 300px 650px;
+	column-gap: 50px;
+	grid-template-rows: 150px 300px;
+	grid-row-gap: 50px;
+
+	grid-template-areas: 'today-spent graph' 'last-spent graph';
+
+	margin-top: 50px;
+}
+
+.energy-statistics > * {
+	width: 100%;
+	height: 100%;
+}
+
+.card.last-energy-spent {
+	grid-area: last-spent;
+}
+
+.card.today-energy-spent {
+	grid-area: today-spent;
+}
+
+.card.energy-graph {
+	grid-area: graph;
+}
+
+.today-energy-spent, .last-energy-spent {
+	display: flex;
+	flex-direction: column;
+
+	text-align: center;
+}
+
+.last-energy-spent__data {
+	display: flex;
+	flex-direction: column;
+}
+
+.energy__heading {
+	text-align: center;
+
+	margin-top: 10px;
+}
+
+.energy__current {
+	font-size: 46px;
+	color: var(--secondary);
+
+	margin-top: 30px;
+}
+
+.energy__normal {
+	font-style: italic;
+
+	margin-top: 15px;
+}
+
+.last-energy-spent__day {
+	font-size: 22px;
+	color: var(--secondary-low);
+
+	margin-top: 20px;
+}
+
+.energy__plot {
+	width: 100%;
+	height: 60%;
+
+	margin-top: 20px;
+	padding: 0 15px;
+}
+
+.energy__plot__heading,
+.energy__plot__heading-mobile {
+	width: 100%;
+
+	margin-top: 20px;
+	padding: 0 15px;
+}
+
+.energy__plot__heading-mobile {
+		display: none;
+}
+
+
+
+
+
+/*----------------------------------------PAGE---NOTIFICATIONS*/
+.notifications__table-headings {
+	display: grid;
+	grid-template-columns: 80px 100px 730px 70px;
+
+	padding-bottom: 10px;
+	border-bottom: 1px dashed var(--secondary-low);
+}
+.notifications__table-headings > * {
+	justify-self: center;
+	font-size: 14px;
+	color: var(--secondary-low);
+}
+
+.notifications__list {
+	display: flex;
+	flex-direction: column;
+}
+
+.card.notifications__item-original {
+	padding: 20px 20px;
+
+	display: grid;
+	grid-template-columns: 10px 150px 700px 100px;
+	align-items: flex-start;
+
+
+	margin-top: 20px;
+}
+
+.notification__sender {
+	color: var(--secondary);
+	padding-left: 15px;
+}
+
+.notification__content {
+	padding-right: 20px;
+	display: flex;
+	flex-direction: column;
+}
+.notification__text.original {
+	font-size: 18px;
+	font-weight: 700;
+}
+.notification__explanation {
+	margin-top: 10px;
+
+	font-size: 16px;
+	color: var(--secondary);
+	font-weight: 400;
+}
+.notification__time {
+	justify-self: center;
+}
+
+.security-call {
+	color: var(--bad);
+}
+
+
+/*--------------------------------------------------WIFI*/
+.wifi-content {
+	display: flex;
+}
+
+.card.wifi-users {
+	width: 530px;
+	height: 700px;
+
+	padding: 30px;
+}
+
+.wifi-sent-recieved {
+	text-align: center;
+
+	margin-left: 75px;
+}
+
+.wifi-sent-recieved > *:last-child {
+	margin-top: 75px;
+}
+
+.card.wifi-sent ,
+.card.wifi-recieved {
+	display: flex;
+	flex-direction: column;
+
+	width: 350px;
+	height: 170px;
+
+	padding: 15px;	
+}
+
+
+.wifi-sent__value {
+	font-size: 40px;
+	color: var(--bad);
+
+	margin-top: 25px;
+}
+
+.wifi-recieved__value {
+	font-size: 40px;
+	color: var(--good);
+
+	margin-top: 25px;
+}
+
+.wifi-sent__month-average,
+.wifi-recieved__month-average {
+	font-style: italic;
+
+	margin-top: 25px;
+}
+
+.card.wifi-users {
+	color: var(--secondary);
+}
+
+.wifi-users__list {
+	display: flex;
+	flex-direction: column;
+}
+
+.wifi-user > * {
+	display: grid;
+	grid-template-columns: 16.1% 45.1% 19.9% 18.9%;
+	align-items: center;
+
+	height: 80px;
+	border-bottom: 1px solid var(--secondary-low);
+
+	padding-top: 15px;	
+	padding-bottom: 15px;
+}
+
+.wifi-user__connection {
+	font-size: 16px;
+}
+
+.wifi-user__name {
+	justify-self: center;
+}
+
+.wifi-user__controls {
+	display: flex;
+	flex-direction: column;
+}
+
+.user-connected .wifi-user__connection{
+	color: var(--good);
+}
+.user-offline .wifi-user__connection{
+	color: var(--secondary-low);
+}
+.user-connected  .unblock-user {
+	display: none;
+}
+.user-offline .disconnect-user {
+	display: none;
+}
+.user-offline .unblock-user {
+	display: none;
+}
+.user-blocked .wifi-user__connection{
+	color: var(--bad);
+}
+.user-blocked .disconnect-user,
+.user-blocked .block-user {
+	display: none;
+}
+.user-blocked .unblock-user,
+.user-blocked .unblock-user {
+	display: block;
+}
+
+.disconnect-user + .block-user {
+	margin-top: 5px;
+}
+
+.disconnect-user:hover {
+	color: var(--secondary-low);
+}
+
+.block-user:hover {
+	color: var(--bad);
+}
+
+.unblock-user:hover {
+	color: var(--good);
+}
+
+.wifi-on .wifi-off__heading {
+	display: none;
+}
+
+.wifi-off .wifi-user {
+	display: none;
+}
+
+.wifi-off__heading {
+	text-align: center;
+
+	margin-top: 40px;
+}
+
+/*--------------------------------------------------SECURITY*/
+
+.security-content {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.card.security-status {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: 200px;
+	height: 200px;
+
+	padding: 20px;
+
+	color: var(--secondary);
+
+}
+
+.security-status__status, 
+.security-status__option {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.status-positive {
+	color: var(--good);
+}
+.status-negative {
+	color: var(--bad);
+}
+
+.switch.security {
+	margin-left: 5px;
+}
+.slider.security  {
+  background-color: var(--bad);
+}
+.slider.security :before {
+  background-color: #000;
+}
+
+.switch.security .security-option-checkbox:checked + .slider.security  {
+  background-color: var(--good);
+}
+
+.security-content__line {
+	display: flex;
+}
+
+.security-content__line:last-child {
+	margin-left: 65px;
+}
+
+.security-content__line > *:last-child {
+	margin-left: 65px;
+}
+
+.card.emergency-calls {
+	color: var(--secondary);
+
+	padding: 20px;
+	margin-bottom: 30px;
+}
+
+.emergency-calls__list {
+	display: flex;
+	justify-content: center;
+
+	margin-top: 15px;
+}
+
+.emergency-calls__list > *:not(:first-child) {
+	margin-left: 20px;
+}
+
+.emergency-calls__item {
+	display: flex;
+	flex-direction: column;
+
+	width: 130px;
+	height: 130px;
+	border: 2px solid var(--secondary);
+	border-radius: 10px;
+
+	padding: 10px;
+
+	text-align: center;
+}
+.emergency-calls__item__heading {
+	font-size: 22px;
+	font-weight: 700;
+
+	margin-bottom: 5px;
+}
+
+.emergency-calls__item__phone {
+	margin-bottom: 15px;
+}
+
+.emergency-calls__item__call img {
+	height: 40px;
+	width: 40px;
+}
+
+.security-CCTV {
+	margin-top: 30px;
+
+	display: flex;
+	justify-content: space-between;
+
+	color: var(--secondary);
+}
+
+.card.CCTV {
+	width: 467px;
+	height: 350px;
+
+	padding: 20px;
+}
+
+.CCTV-picture {
+	height: 80%;
+	border: 1px solid var(--secondary-low);
+
+	color: var(--secondary-low);
+	text-align: center;
+
+	margin-top: 15px;
+}
+.CCTV-picture.picture-on {
+	border: none;
+}
+
+.CCTV-image img{
+	width: 100%;
+	height: 100%;
+}
+
+.CCTV-text {
+	margin-top: 30%;
+}
+
+.CCTV-picture.picture-off .CCTV-text{
+	display: block;
+}
+.CCTV-picture.picture-off .CCTV-image{
+	display: none;
+}
+
+.CCTV-picture.picture-on .CCTV-text{
+	display: none;
+}
+.CCTV-picture.picture-on .CCTV-image{
+	display: block;
+}
+
+.CCTV__status {
+	font-weight: 400;
+}
+
+
+/*--------------------------------------------------SETTINGS*/
+
+.settings__theme {
+	display: flex;
+}
+
+.settings__theme > *:first-child {
+	margin-right: 50px;
+}
+
+.card.light-theme,
+.card.dark-theme {
+	width: 200px;
+	height: 200px;
+
+	font-size: 22px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	cursor: pointer;
+}
+
+.card.theme-example {
+	width: 130px;
+	height: 100px;
+
+	margin-top: 15px;
+}
+
+.card.light-theme {
+	color: var(--secondary);
+	background-color: var(--primary);
+}
+
+.card.dark-theme {
+	color: var(--primary);
+	background-color: var(--secondary);
+}
+
+.card.clicked {
+	border: 4px solid #439B57;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

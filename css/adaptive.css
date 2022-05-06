@@ -1,0 +1,689 @@
+@media (max-width: 1024px) {
+	.security-content__line:last-child {
+		margin-left: 0;
+		margin-top: 35px;
+	}
+
+	.card.CCTV {
+		width: 330px;
+		height: 360px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.devices__line {
+		flex-direction: column;
+	}
+
+	.device__music-player__content {
+		display: grid;
+		grid-template: 1fr / 1fr 1fr;
+	}
+
+	.device__volume-controls .slidecontainer {
+		width: 70%;
+	}
+}
+
+/*media MAIN*/
+@media (max-width: 1340px) {
+	.container-1440 {
+		margin: 0;
+	}
+
+	.header__container {
+		width: 1000px;
+	}
+
+	.header__search {
+		width: 80%;
+	}
+
+	.main {
+		flex-direction: column;
+
+		margin: 0;
+		padding-bottom: 50px;
+	}	
+
+	.pages {
+		padding-top: 30px;
+		padding-right: 20px;
+	}
+
+	.menu {
+		width: 100%
+	}
+
+	.menu__list ul{
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.menu__link {
+		margin: 0;
+	}
+	.menu__link:not(:first-child) {
+		margin: 0 0 0 10px;
+	}
+
+	.menu__title {
+		display: none;
+	}
+
+	.menu__link {
+		border-radius: 0 0 20px 20px;	
+		padding: 20px;
+	}
+
+	.menu__icon, .menu__icon_active	{	
+		margin: 0;
+	}
+
+	.workspace__pages {
+		margin-top: 30px;
+		padding: 0;
+	}
+}
+
+@media (max-width: 727px) {
+	.pages {
+		padding: 0;
+		padding-top: 10px;
+	}
+
+	.page {
+		max-width: 360px;
+	}
+
+	.menu__list {
+		max-width: 388px;
+		margin: 0 auto;
+	}
+
+	.menu__link:not(:first-child) {
+		margin-left: 5px;
+	}
+
+	.card {
+		width: 314px;
+		
+		margin: 0 auto;
+	}
+}
+
+
+
+@media (max-width: 1024px) {
+	/*header-changes*/
+	.header__container {
+		width: var(--content-minimal);
+
+		grid-template-columns: 5% 10.6% 31.9% 13.3% 32.2% 7%;
+	}
+
+	.header__logo-mini {
+		display: block
+	}
+
+	.header__logo, 
+	.users__greeting {
+		display: none;
+	}
+
+	.page {
+		width: var(--content-minimal);
+		height: 100%;
+	}
+
+	.menu__link:not(:first-child) {
+		margin: 0;
+	}
+
+}
+
+@media (max-width: 727px) {
+	.header__container {
+		display: grid;
+		grid-template-columns: 14.55% 15.24% 35.05% 21.28% 13.81%;
+
+		width: 100%;
+		max-width: 488px;
+		height: 100%;
+		
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+
+	.header__logo-mini__img,
+	.header__exit {
+		width: 22px;
+		height: 22px;
+		padding: 0;
+	}
+
+	.header__year{
+		display: none;
+	}
+
+
+	.users__menu__item {
+		width: 50px;
+
+		padding: 0;
+	}
+
+	.users__menu__item > *:not(:first-child) {
+		margin-top: 6px;
+	}
+	.header__add-user {
+		margin-left: 8px;
+	}
+
+	.users__arrow,
+	.users__greeting,
+	.users__menu__item__name {
+	 	display: none;
+	 }
+
+	.header__container > * {
+	 	justify-self: center;
+	 }
+
+	.header__search {
+	 	padding: 0 10px;
+	 }
+	.users__menu__item.new-user {
+	 	justify-content: center;
+	 }
+	.users__menu__item__add {
+	 	width: 35px;
+	 	height: 33px;
+
+	 	margin-top: 5px;
+	 	margin-left: 8px;
+	 }
+
+	.menu__list {
+	 	border-bottom: 1px dashed var(--half-secondary);
+	 }
+
+	.menu__link {	
+		border-radius: 10px;
+	}
+}
+
+/*-----------------MEDIA DASHBOARD*/
+@media (max-width: 1024px) {
+	.dashboard__system-cards {
+		flex-direction: row;
+
+		width: var(--content-minimal);
+
+		margin-top: 40px;
+	}
+
+	.dashboard__system-cards > *:last-child {
+		margin-left: 80px;
+	}
+
+	.dashboard__system-cards > * {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.temperature__side-settings {
+		margin-left: 0;
+	}
+
+	.card.living-room__temp,
+	.card.bath__temp,
+	.card.auto__temp {
+		width: 690px;
+		height: auto;
+	}
+
+	.card.bath__temp {
+		margin-top: 30px;
+	}
+}
+
+
+
+@media (max-width: 727px) {
+	.dashboard__control-cards {
+		justify-content: center;
+	}
+
+	.dashboard__control-cards > *:nth-child(n+3) {
+		margin-top: 20px;
+	}
+
+	.dashboard__control-cards > * {
+		margin-top: 20px;
+	}
+
+	.dash-temperature-card {
+		margin-top: 20px;
+	}
+
+	.dashboard__system-cards {
+		margin-top: 330px;
+	}
+
+	.dash-movies-card {
+		width: 330px;
+ 		height: 310px;
+	}
+ 
+ 	.movie__plot {
+ 		display: none;
+ 	}
+
+ 	.content__title {
+ 		top: 20%;
+	  	left: 0;
+
+ 		width: 100%;
+ 		text-align: center;
+ 	}
+
+ 	.movie {
+ 		padding: 0;
+ 	}
+
+ 	.movie__info {
+ 		display: flex;
+ 		flex-direction: column;
+ 		justify-content: center;
+
+ 		width: 330px;
+ 		height: 310px;
+
+ 		text-align: center;	
+
+ 		padding: 0 0px;
+ 	}
+
+ 	.movie__rating {
+ 		margin-top: 15px;
+ 	}
+
+	.movie__choose {
+		top: 70%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.movies-slider-dots {
+		top: 88%;
+	}
+
+	.dashboard__system-cards {
+		flex-direction: column;
+	}
+
+	.dashboard__system-cards > *:last-child {
+		margin-left: auto;
+		margin-top: 20px;
+	}
+}
+
+/*-----------------MEDIA DEVICES*/
+
+@media (max-width: 727px) {
+	.devices__line,
+	.devices__line > *:not(:first-child) {
+		margin-top: 20px;
+	}
+
+	.device__music-player__content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.device__TV__tonights-choice__film {
+		display: grid;
+		grid-template-columns: 80% 20%;
+		grid-template-rows: 3fr 1fr;
+
+		margin-top: 2px;
+	}
+
+	.film-chosen-img {
+		grid-column: 1 / -1;
+	}
+
+	.chosen-movie__name,
+	.delete-movie-choice {
+		font-size: 18px;
+
+		margin: 0;
+		padding: 0;
+	}
+
+	.chosen-movie__name {
+		text-align: left;
+	}
+	.delete-movie-choice {
+		width: 25px;
+		height: 25px;
+	}
+}
+
+/*------------MEDIA LIGHTS*/
+@media (max-width: 1024px) {
+	.lights__room-scheme {
+		width: 690px;
+		height: 1070px;
+	}
+
+	.card.hall {
+		top: 380px;
+	}
+
+	.card.kitchen {
+		top: 380px;
+		left: 0;
+	}
+
+	.card.bathroom {
+		top: 740px;
+		left: 50%;
+		transform: translateX(-50%);
+
+		width: 100%;
+	}
+
+	.card.light-regimes {
+		width: 100%;
+		height: auto;
+	}
+
+	.light-regimes__itemlist {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	.light-regimes__item {
+		flex-direction: column;
+
+		padding-top: 0;
+	}
+
+	.light-regimes__item .switch {
+		margin-top: 10px;
+	}
+}
+
+
+@media (max-width: 727px) {
+	.lights__room-scheme {
+		width: 314px;
+		height: 1530px;
+
+		margin: 0 auto;
+	}
+
+	.lights__room-scheme .card {
+		width: 314px;
+	}
+
+	.card.bathroom {
+		top: 730px;
+	}
+
+	.card.hall {
+		top: 920px;
+	}
+
+	.light-regimes__itemlist {
+		flex-direction: column;
+	}
+
+	.light-regimes__item {
+		flex-direction: row;
+	}
+}
+
+
+/*----------MEDIA TEMP*/
+
+@media (max-width: 727px) {
+	.card.living-room__temp,
+	.temperature__side-settings,
+	.card.bath__temp,
+	.card.auto__temp {
+		width: 314px;
+
+		margin: 0 auto;
+	}
+
+	.temperature__side-settings,
+	.temperature__side-settings > *:last-child {
+		margin-top: 20px;
+	}
+
+	.card.living-room__temp,
+	.card.bath__temp,
+	.card.auto__temp  {
+		padding: 20px 30px;
+	}
+
+	.auto__temp__stayinghome__heading,
+	.auto__temp__window__heading {
+		width: 180px;
+	}
+}
+
+
+
+/*----------MEDIA ELEC*/
+@media (max-width: 1024px) {
+	.energy-statistics {
+		grid-template-columns: 690px;
+		grid-template-rows: 100px 500px 150px;
+		grid-row-gap: 25px;
+
+		grid-template-areas: 'last-spent' 'graph' 'today-spent';
+
+		margin-top: 25px;
+	}
+
+	.last-energy-spent__data {
+		flex-direction: row;
+		justify-content: center;
+
+	  margin-top: 20px;
+	}
+
+	.last-energy-spent__data > * {
+		margin-top: 0;
+	}
+
+	.last-energy-spent__data > * {
+		width: 100%;
+		height: 100%;
+	}
+
+	.energy__plot__heading-desktop,
+	.energy__plot__heading-mobile {
+		margin-top: 10px;
+		padding: 0;
+	}
+}
+
+
+@media (max-width: 727px) {
+	.card.electric-board {
+		flex-wrap: wrap;
+	}
+
+	.electric-board__switch {
+		margin-top: 30px;
+	}
+
+	.energy-statistics {
+		grid-template-rows: 100px 500px 150px;
+		grid-template-columns: 1fr;
+	}
+
+	.energy-statistics > * {
+		padding: 10px 15px;
+	}
+
+	.last-energy-spent__day {
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 727px) {
+	.energy__plot__heading-desktop {
+		display: none;
+	}
+	.energy__plot__heading-mobile {
+		display: block;
+	}
+}
+
+
+/*----------MEDIA  NOTIF*/
+@media (max-width: 1024px) {
+	.notifications__table-headings {
+		grid-template-columns: 60px 100px 450px 80px;
+	}
+
+	.card.notifications__item-original {
+		grid-template-columns: 10px 130px 410px 100px;
+		align-items: flex-start;
+
+		margin-top: 20px;
+	}
+}
+
+@media (max-width: 727px) {
+	.notifications__table-headings {
+		display: none;
+	}
+
+	.card.notifications__item-original {
+		grid-template-columns: 10px 100%;
+		grid-template-rows: 30px 130px 20px;
+		grid-template-areas: 'urgency sender' 'text text' 'time time';
+		
+		align-items: center;
+	}
+
+	.notification__alert {
+		grid-area: urgency;
+	}
+	.notification__sender {
+		grid-area: sender;
+	}
+	.notification__content {
+		grid-area: text;
+	}
+	.notification__time {
+		grid-area: time;
+
+		justify-self: flex-start;
+	}
+}
+
+/*----------MEDIA  WIFI*/
+@media (max-width: 1024px) {
+	.wifi-content {
+		flex-direction: column;
+	}
+
+	.wifi-sent-recieved > *:last-child {
+		margin-top: 25px;
+	}
+
+	.wifi-sent-recieved {
+		margin-left: 0;
+		margin-top: 25px;
+	}
+
+	.wifi .card {
+		width: 100%;
+	}
+
+}
+
+@media (max-width: 727px) {
+	.wifi .card {
+		width: 314px;
+	}
+
+	.card.wifi-users {
+		height: 100%;
+
+		padding: 30px 10px;
+	}
+
+	.wifi-user > * {
+		grid-template-columns: 80px 120px 1fr;
+		grid-template-rows: 1fr 1fr;
+		text-align: center;
+		align-items: center;
+	}
+
+	.wifi-user__connection {
+		grid-column: 1 / 2;
+		grid-row: 1 / -1;
+	}
+	.wifi-user__traffic {
+		grid-column: -3 / -2;
+		grid-row: 2 / -1;
+	}
+	.wifi-user__controls {
+		grid-column: 3 / -1;
+		grid-row: 1 / -1;
+	}
+}
+
+/*----------MEDIA  SECURITY*/
+
+@media (max-width: 727px) {
+	.emergency-calls__list {
+		flex-wrap: wrap;
+	}
+	.emergency-calls__list > *:not(:first-child) {
+		margin-left: 0;
+	}
+	.emergency-calls__list > *:nth-child(2n) {
+		margin-left: 5px;
+	}
+	.emergency-calls__list > *:nth-child(n + 3) {
+		margin-top: 5px;
+	}
+
+	.security-content__line {
+		flex-direction: column;
+	}
+	.security-content__line > *:last-child {
+		margin-left: 0;
+		margin-top: 35px;
+	}
+
+	.security-content__line .card {
+		width: 314px;
+	}
+
+	.security-CCTV {
+		flex-direction: column;
+	}
+	.security-CCTV > *:last-child {
+		margin-top: 20px;
+	}
+
+	.card.light-theme, 
+	.card.dark-theme {
+		height: 175px;
+	}
+}
