@@ -63,6 +63,9 @@
 	}
 
 	.menu__link {
+		width: 20px;
+		height: 50px;
+		background-position: center;
 		margin: 0;
 	}
 	.menu__link:not(:first-child) {
@@ -75,7 +78,6 @@
 
 	.menu__link {
 		border-radius: 0 0 20px 20px;	
-		padding: 20px;
 	}
 
 	.menu__icon, .menu__icon_active	{	
@@ -240,14 +242,14 @@
 		margin-left: 0;
 	}
 
-	.card.living-room__temp,
-	.card.bath__temp,
-	.card.auto__temp {
+	.card.living-room-temp,
+	.card.bath,
+	.card.auto-temp {
 		width: 690px;
 		height: auto;
 	}
 
-	.card.bath__temp {
+	.card.bath {
 		margin-top: 30px;
 	}
 }
@@ -267,7 +269,7 @@
 		margin-top: 20px;
 	}
 
-	.dash-temperature-card {
+	.dash-temperature {
 		margin-top: 20px;
 	}
 
@@ -275,7 +277,7 @@
 		margin-top: 330px;
 	}
 
-	.dash-movies-card {
+	.dash-movies {
 		width: 330px;
  		height: 310px;
 	}
@@ -284,7 +286,7 @@
  		display: none;
  	}
 
- 	.content__title {
+ 	.content-title {
  		top: 20%;
 	  	left: 0;
 
@@ -309,11 +311,11 @@
  		padding: 0 0px;
  	}
 
- 	.movie__rating {
+ 	.rating {
  		margin-top: 15px;
  	}
 
-	.movie__choose {
+	.choose-movie {
 		top: 70%;
 		left: 50%;
 		transform: translateX(-50%);
@@ -358,7 +360,7 @@
 		grid-column: 1 / -1;
 	}
 
-	.chosen-movie__name,
+	.chosen-movie-name,
 	.delete-movie-choice {
 		font-size: 18px;
 
@@ -366,7 +368,7 @@
 		padding: 0;
 	}
 
-	.chosen-movie__name {
+	.chosen-movie-name {
 		text-align: left;
 	}
 	.delete-movie-choice {
@@ -454,10 +456,10 @@
 /*----------MEDIA TEMP*/
 
 @media (max-width: 727px) {
-	.card.living-room__temp,
+	.card.living-room-temp,
 	.temperature__side-settings,
-	.card.bath__temp,
-	.card.auto__temp {
+	.card.bath,
+	.card.auto-temp {
 		width: 314px;
 
 		margin: 0 auto;
@@ -468,14 +470,14 @@
 		margin-top: 20px;
 	}
 
-	.card.living-room__temp,
-	.card.bath__temp,
-	.card.auto__temp  {
+	.card.living-room-temp,
+	.card.bath,
+	.card.auto-temp  {
 		padding: 20px 30px;
 	}
 
-	.auto__temp__stayinghome__heading,
-	.auto__temp__window__heading {
+	.auto-temp__stayinghome-heading,
+	.auto-temp__window-heading {
 		width: 180px;
 	}
 }
@@ -557,7 +559,7 @@
 		grid-template-columns: 60px 100px 450px 80px;
 	}
 
-	.card.notifications__item-original {
+	.card.notification {
 		grid-template-columns: 10px 130px 410px 100px;
 		align-items: flex-start;
 
@@ -570,7 +572,7 @@
 		display: none;
 	}
 
-	.card.notifications__item-original {
+	.card.notification {
 		grid-template-columns: 10px 100%;
 		grid-template-rows: 30px 130px 20px;
 		grid-template-areas: 'urgency sender' 'text text' 'time time';
@@ -578,7 +580,7 @@
 		align-items: center;
 	}
 
-	.notification__alert {
+	.notification-alert {
 		grid-area: urgency;
 	}
 	.notification__sender {

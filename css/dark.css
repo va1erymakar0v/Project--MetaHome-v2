@@ -6,8 +6,6 @@
   --newboxes:  #ddddff;
 }
 
-
-
 .container-1440.dark-theme {
 	background-color: var(--secondary);
 }
@@ -15,6 +13,10 @@
 .dark-theme .header {
 	color: var(--primary);
 	background-color: #000;
+}
+
+.dark-theme .users__arrow {
+	background-image: url("data:image/svg+xml,%0A%3Csvg width='15' height='9' viewBox='0 0 15 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.5 1.5L7.5 7.5L1.5 1.5' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
 }
 
 .dark-theme .header__logo > * {
@@ -25,10 +27,6 @@
 	color: var(--primary);
 
 	border: 1px solid var(--primary);
-}
-
-.dark-theme .users__arrow svg{
-	stroke: #fff;
 }
 
 .dark-theme .users__menu__item__name {

@@ -43,19 +43,19 @@ const sortNotifications = () => {
 
 sortNotifications();
 
-const dashboardNotifications = document.querySelector('.dash-notifications-card');
-const exampleNote = document.querySelector('.dash-notifications__item-example');
+const dashboardNotifications = document.querySelector('.dash-notifications');
+const exampleNote = document.querySelector('.dash-notification');
 
 const addDashNote = (dashText, dashAlert) => {
-	let dashNotesList = document.querySelectorAll('.dash-notifications-card .dash-notifications__item');
-	let dashNote = document.querySelector('.dash-notifications__item-example').cloneNode(true);
+	let dashNotesList = document.querySelectorAll('.dash-notifications .dash-notifications__item');
+	let dashNote = document.querySelector('.dash-notification').cloneNode(true);
 
 	if (dashNotesList.length == 5) {
 		dashNotesList[4].remove();
 	}
 
 	dashNote.querySelector('.dash-notification__text').innerHTML = dashText;
-	dashNote.querySelector('.notification__alert').classList.add(dashAlert);
+	dashNote.querySelector('.notification-alert').classList.add(dashAlert);
 
 	dashNote.querySelector('.dash-notification__minutes').innerHTML = 0;
 	setInterval(() => {
@@ -161,9 +161,9 @@ for (let i = 0; i < menuLinks.length; i++) {
 
 const temperatureUp = document.querySelector('.dash-temperature__up');
 const temperatureDown = document.querySelector('.dash-temperature__down');
-const currentDegreesNight = document.querySelector('.dash-description__night');
-const currentDegreesDay = document.querySelector('.dash-description__day');
-const weatherTemperature = document.querySelector('.dash-description__tempertature-now__value');
+const currentDegreesNight = document.querySelector('.dash-weather__night');
+const currentDegreesDay = document.querySelector('.dash-weather__day');
+const weatherTemperature = document.querySelector('.dash-weather__tempertature-value');
 
 const currentDegreesWeather = document.querySelector('.dash-temperature__degrees');
 
@@ -275,14 +275,14 @@ moviesSliderPrev.addEventListener('click', prevSlide);
 
 
 // -----------------------------------------------------------------------MOVIE-CHOOSE
-const deviceTV = document.querySelector('.device__card-TV');
+const deviceTV = document.querySelector('.device-TV');
 
-const movieChoose = document.querySelectorAll('.movie__choose');
+const movieChoose = document.querySelectorAll('.choose-movie');
 
 const deviceTVMovieBlock = document.querySelector('.device__TV__tonights-choice');
 const deviceTVMovieNone = document.querySelector('.device__TV__tonights-choice__none');
 
-const deviceTVFilmName = document.querySelector('.chosen-movie__name');
+const deviceTVFilmName = document.querySelector('.chosen-movie-name');
 const deviceTVFilmCover = document.querySelector('.film-chosen-img');
 const deviceTVFilmClear = document.querySelector('.delete-movie-choice');
 
@@ -342,22 +342,17 @@ deviceTVFilmClear.onclick = function () {
 
 
 const deviceTVStart = document.getElementById('TV__play');
-const deviceTVPause = document.getElementById('TV__pause');
 
 deviceTVStart.onclick = function () {
-	deviceTVStart.style.display = 'none';
-	deviceTVPause.style.display = 'block';
+	deviceTVStart.classList.toggle("pause");
 
-	deviceTV.querySelector('.device__status').style.color = 'var(--good)';
-	deviceTV.querySelector('.device__status').innerHTML = 'Turned On';
-}
-
-deviceTVPause.onclick = function () {
-	deviceTVStart.style.display = 'block';
-	deviceTVPause.style.display = 'none';
-
-	deviceTV.querySelector('.device__status').style.color = 'var(--secondary-low)';
-	deviceTV.querySelector('.device__status').innerHTML = 'Turned Off';
+	if (!deviceTVStart.classList.contains("pause")) {
+		deviceTV.querySelector('.device__status').style.color = 'var(--good)';
+		deviceTV.querySelector('.device__status').innerHTML = 'Turned On';
+	} else {
+		deviceTV.querySelector('.device__status').style.color = 'var(--bad)';
+		deviceTV.querySelector('.device__status').innerHTML = 'Turned Off';
+	}
 }
 
 
@@ -365,10 +360,9 @@ deviceTVPause.onclick = function () {
 
 // -----------------------------------------------------------------------PLAYER
 
-const devicePlayer = document.querySelector('.device__card-music');
+const devicePlayer = document.querySelector('.device-music');
 
 const devicePlayerStart = document.getElementById('music__play');
-const devicePlayerPause = document.getElementById('music__pause');
 const devicePlayerPrev = document.getElementById('music__prev');
 const devicePlayerNext = document.getElementById('music__next');
 
@@ -377,23 +371,17 @@ const dashboardMusicCheckbox = document.querySelector('.dash-music-quick-checkbo
 const songList = devicePlayer.querySelectorAll('.song');
 
 devicePlayerStart.onclick = function () {
-	devicePlayerStart.style.display = 'none';
-	devicePlayerPause.style.display = 'block';
+	devicePlayerStart.classList.toggle('pause');
 
-	devicePlayer.querySelector('.device__status').style.color = 'var(--good)';
-	devicePlayer.querySelector('.device__status').innerHTML = 'Playing now';
-
-	dashboardMusicCheckbox.checked = true;
-}
-
-devicePlayerPause.onclick = function () {
-	devicePlayerStart.style.display = 'block';
-	devicePlayerPause.style.display = 'none';
-
-	devicePlayer.querySelector('.device__status').style.color = 'var(--secondary-low)';
-	devicePlayer.querySelector('.device__status').innerHTML = 'On pause now';
-
-	dashboardMusicCheckbox.checked = false;
+	if (!devicePlayerStart.classList.contains("pause")) {
+		devicePlayer.querySelector('.device__status').style.color = 'var(--good)';
+		devicePlayer.querySelector('.device__status').innerHTML = 'Playing now';
+		dashboardMusicCheckbox.checked = true;
+	} else {
+		devicePlayer.querySelector('.device__status').style.color = 'var(--bad)';
+		devicePlayer.querySelector('.device__status').innerHTML = 'On pause now';
+		dashboardMusicCheckbox.checked = false;
+	}
 }
 
 let currentSongIndex = 0;
@@ -446,20 +434,8 @@ devicePlayerVolume.oninput = function () {
 	songVolume.innerHTML = devicePlayerVolume.value;
 }
 
-dashboardMusicCheckbox.onchange = function() {
-	if (dashboardMusicCheckbox.checked) {
-		devicePlayerStart.style.display = 'none';
-		devicePlayerPause.style.display = 'block';
-
-		devicePlayer.querySelector('.device__status').style.color = 'var(--good)';
-		devicePlayer.querySelector('.device__status').innerHTML = 'Playing now';
-	} else {
-		devicePlayerStart.style.display = 'block';
-		devicePlayerPause.style.display = 'none';
-
-		devicePlayer.querySelector('.device__status').style.color = 'var(--secondary-low)';
-		devicePlayer.querySelector('.device__status').innerHTML = 'On pause now';
-	}
+dashboardMusicCheckbox.onclick = function() {
+	devicePlayerStart.click();
 }
 
 // -----------------------------------------------------------------------LIGHTS
@@ -634,36 +610,36 @@ meetingRegimeCheckbox.onchange = function() {
 // -----------------------------------------------------------------------TEMPERATURE
 
 const mainTemperature = document.querySelector('.temperature__value');
-const mainDegreesSign = document.querySelector('.temperature__degrees .degrees__sign');
+const mainDegreesSign = document.querySelector('.temperature__degrees .degrees-sign');
 const mainTemperatureBorder = document.querySelector('.temperature__degrees');
 
-const mainHeaterTemperature = document.querySelector('.heat-sources__source1 .heat-sources__temperature__value');
-const mainHeaterUp = document.querySelector('.source1__temperature__up');
-const mainHeaterDown = document.querySelector('.source1__temperature__down');
+const mainHeaterTemperature = document.querySelector('.source1 .heat-sources-temperature-value');
+const mainHeaterUp = document.querySelector('.source1__temperature-up');
+const mainHeaterDown = document.querySelector('.source1__temperature-down');
 
-const secondHeaterTemperature = document.querySelector('.heat-sources__source2 .heat-sources__temperature__value');
-const secondHeaterUp = document.querySelector('.source2__temperature__up');
-const secondHeaterDown = document.querySelector('.source2__temperature__down');
+const secondHeaterTemperature = document.querySelector('.source2 .heat-sources-temperature-value');
+const secondHeaterUp = document.querySelector('.source2__temperature-up');
+const secondHeaterDown = document.querySelector('.source2__temperature-down');
 
-const weatherHeaterTemperature = document.querySelector('.heat-sources__weather .heat-sources__temperature__value');
-const weatherHeaterNight = document.querySelector('.heat-sources__weather .heat-sources__weather__night');
-const weatherHeaterDay = document.querySelector('.heat-sources__weather .heat-sources__weather__day');
+const weatherHeaterTemperature = document.querySelector('.heat-source-weather .heat-sources-temperature-value');
+const weatherHeaterNight = document.querySelector('.heat-source-weather .heat-source-weather__night');
+const weatherHeaterDay = document.querySelector('.heat-source-weather .heat-source-weather__day');
 
 
-const livingroomTimer = document.querySelector('.living-room__temp .temperature__ready__timer');
-const livingroomTimerHeading = document.querySelector('.living-room__temp .temperature__ready__heading');
+const livingroomTimer = document.querySelector('.living-room-temp .temperature__ready-timer');
+const livingroomTimerHeading = document.querySelector('.living-room-temp .temperature__ready-heading');
 
-const bathTimer = document.querySelector('.bath__temp .temperature__ready__timer');
-const bathTimerHeading = document.querySelector('.bath__temp .temperature__ready__heading');
+const bathTimer = document.querySelector('.bath .temperature__ready-timer');
+const bathTimerHeading = document.querySelector('.bath .temperature__ready-heading');
 
-const autoTimer = document.querySelector('.auto__temp .temperature__ready__timer');
-const autoTimerHeading = document.querySelector('.auto__temp .temperature__ready__heading');
+const autoTimer = document.querySelector('.auto-temp .temperature__ready-timer');
+const autoTimerHeading = document.querySelector('.auto-temp .temperature__ready-heading');
 
 const calculateTime = (a, b) => {
 	return Math.abs(Math.round((a - b)*7)) + 's';
 }
 
-const setTemperatureLivingroom = document.querySelector('.set-temperature__living-room');
+const setTemperatureLivingroom = document.querySelector('.set-temperature-living-room');
 setTemperatureLivingroom.disabled = true;
 
 
@@ -797,15 +773,15 @@ setTemperatureLivingroom.onclick = function() {
 
 
 
-const bathTemperature = document.querySelector('.bath__temp .heat-sources__temperature__value');
-const bathDegreesSign = document.querySelector('.bath__temp .degrees__sign');
-const bathTemperatureUp = document.querySelector('.bath__temperature__up');
-const bathTemperatureDown = document.querySelector('.bath__temperature__down');
+const bathTemperature = document.querySelector('.bath .heat-sources-temperature-value');
+const bathDegreesSign = document.querySelector('.bath .degrees-sign');
+const bathTemperatureUp = document.querySelector('.bath__temperature-up');
+const bathTemperatureDown = document.querySelector('.bath__temperature-down');
 
 let bathTemperatureStart = Number(bathTemperature.innerHTML);
 let bathTemperatureCurrent = Number(bathTemperature.innerHTML);
 
-const setTemperatureBathroom = document.querySelector('.set-temperature__bath');
+const setTemperatureBathroom = document.querySelector('.set-temperature-bath');
 setTemperatureBathroom.disabled = true;
 
 const colorBathChanges = () => {
@@ -882,15 +858,15 @@ setTemperatureBathroom.onclick = function() {
 
 
 
-const recommendedTemperature = document.querySelector('.auto__temp__advice__value');
-const recommendedTemperatureDegrees = document.querySelector('.auto__temperature .degrees__sign');
-const recommendedTemperatureAround = document.querySelector('.auto__temperature .around__sign');
-const stayinghomeOption = document.querySelector('.auto__temp__stayinghome-checkbox');
-const windowOption = document.querySelector('.auto__temp__window-checkbox');
+const recommendedTemperature = document.querySelector('.auto-temp__advice-value');
+const recommendedTemperatureDegrees = document.querySelector('.auto-temperature .degrees-sign');
+const recommendedTemperatureAround = document.querySelector('.auto-temperature .around-sign');
+const stayinghomeOption = document.querySelector('.auto-temp__stayinghome-checkbox');
+const windowOption = document.querySelector('.auto-temp__window-checkbox');
 
 let autoTempBalancing = 0;
 
-const setTemperatureAuto = document.querySelector('.set-temperature__auto');
+const setTemperatureAuto = document.querySelector('.set-temperature-auto');
 
 
 const calculateRecommendedTemperature = () => {
