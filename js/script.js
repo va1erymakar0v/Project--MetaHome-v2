@@ -156,6 +156,41 @@ for (let i = 0; i < menuLinks.length; i++) {
 }
 
 
+const dashWeather = document.getElementById('dash-weather');
+const menuWeather = document.querySelector('.menu__link--temperature')
+
+dashWeather.onclick = function() {
+	menuWeather.click();
+}
+
+const dashWifi = document.getElementById('dash-wifi');
+const menuWifi = document.querySelector('.menu__link--wifi')
+
+dashWifi.onclick = function() {
+	menuWifi.click();
+}
+
+const dashTemperature = document.querySelector('.dash-temperature__control');
+const menuTemperature = document.querySelector('.menu__link--temperature')
+
+dashTemperature.onclick = function() {
+	menuTemperature.click();
+}
+
+const dashElectricity = document.querySelector('.dash-electricity__graphs');
+const menuElectricity = document.querySelector('.menu__link--electricity')
+
+dashElectricity.onclick = function() {
+	menuElectricity.click();
+}
+
+const dashNotifications = document.getElementById('dash-notifications');
+const menuNotifications = document.querySelector('.menu__link--notifications')
+
+dashNotifications.onclick = function() {
+	menuNotifications.click();
+}
+
 
 // -----------------------------------------------------------------------TEMPERATURE
 

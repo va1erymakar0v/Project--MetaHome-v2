@@ -437,6 +437,8 @@ select:focus {
 .card {
 	position: relative;
 
+	display: block;
+
 	border-radius: 20px;
 	
 	color: var(--half-secondary);
@@ -541,9 +543,10 @@ input:disabled + .slider:before {
 }
 
 .dash-weather, 
-.dash-temperature, 
+.dash-temperature__control, 
 .dash-wifi, 
-.dash-electricity {
+.dash-electricity__graphs,
+.dash-notifications {
 	cursor: pointer;
 }
 
